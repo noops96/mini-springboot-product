@@ -1,0 +1,24 @@
+package com.example.Product.Entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "product_type")
+public class ProductType extends BaseEntity {
+	
+	private static final long serialVersionUID = 1L;
+	
+	@Column(name = "name")
+	private String name;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+}
