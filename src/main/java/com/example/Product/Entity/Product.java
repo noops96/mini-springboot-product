@@ -1,5 +1,7 @@
 package com.example.Product.Entity;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -18,9 +20,20 @@ public class Product extends BaseEntity {
 	@Column(name = "seller_id")
 	private Integer sellerId;
 	
+	@Column(name = "price")
+	private BigDecimal price;
+	
 	@JoinColumn(name = "product_type_id", referencedColumnName = "id")
 	@OneToOne
 	private ProductType ProductType;
+
+	public BigDecimal getPrice() {
+		return price;
+	}
+
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
 
 	public String getName() {
 		return name;
